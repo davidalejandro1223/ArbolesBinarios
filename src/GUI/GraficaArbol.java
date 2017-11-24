@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author david
@@ -20,10 +23,16 @@ public class GraficaArbol extends javax.swing.JFrame {
      * 
      */
     public GraficaArbol(String post, String pre, String in) {
-        initComponents();
         this.postOrden = post;
         this.preOrden = pre;
         this.inOrden = in;
+        initComponents();
+    }
+    
+    public void crearMatriz(){
+        
+        //String tempPos = 
+                
     }
 
     /**
@@ -35,20 +44,31 @@ public class GraficaArbol extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        canvas1 = new java.awt.Canvas();
+        lienzo = new LogicaLienzo(this.postOrden, this.preOrden, this.inOrden, 876, 530);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setSize(new java.awt.Dimension(800, 800));
+        setMinimumSize(new java.awt.Dimension(900, 600));
+        setPreferredSize(new java.awt.Dimension(900, 600));
+        setSize(new java.awt.Dimension(900, 600));
+
+        lienzo.setMinimumSize(new java.awt.Dimension(876, 530));
+        lienzo.setPreferredSize(new java.awt.Dimension(876, 530));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(canvas1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lienzo, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lienzo, javax.swing.GroupLayout.DEFAULT_SIZE, 580, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -80,12 +100,12 @@ public class GraficaArbol extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(GraficaArbol.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Canvas canvas1;
+    private java.awt.Canvas lienzo;
     // End of variables declaration//GEN-END:variables
 }
